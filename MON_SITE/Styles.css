@@ -1,0 +1,134 @@
+
+/* commentaire CSS */
+
+p {
+	color:rgb(0,0,100);
+	font-family: 'garamond', 'times new roman';
+	font-size: 2.5em;
+}
+
+h2 {
+	color:purple;
+}
+
+/* déclaration d'une classe, qui commence par un point */
+.paragrapheImportant {
+	color:white;	
+}
+
+#deuxiemeP {
+	/* déclaration avec dièse cette fois */
+	/* <a comme :   href="#ICIonva">ICI !!</a> */
+	color:pink;
+}
+
+.mottitre {
+	color:grey;
+}
+
+#sommaire {
+
+}
+
+#somList {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.bordures {
+	border:green 0.4em solid;
+	border-radius: 4em 5em;
+	color:rgba(5,5,100,0.2);
+	background-color:hotpink;	
+}
+
+a:hover {  <!-- lors d'un survol des liens-->
+	font-weight: bold;
+	font-style: italic;
+	color:aqua;
+}
+
+div
+{
+	display: flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	align-content:space-around;
+	min-height: 70%;
+	border:0.2em solid;
+	border-radius:1.5em;
+}
+
+div:nth-child(2) {
+	flex:2;
+	color:blue;
+	background: yellow;
+}
+
+.moit {
+	width: 50vh;
+	height: 20vh;
+	color: red;
+}
+
+#final {
+	margin:auto;
+	padding:auto;
+}
+
+*
+{
+	text-align: center;
+}
+nav {
+	margin: 5px;
+	padding:2px;
+	border:solid rgba(5,5,100,0.2);
+	border-radius:0.5em;
+	font-family: verdana, 'comics sans ms';
+	font-weight: bold;
+	text-align: left;
+	min-height: 10vh
+;	min-width: 100vh;
+}
+
+article {
+	flex:1;
+	margin:1px;
+	padding: auto;
+	border: groove purple;
+	border-radius:0.5em 1em 1.5em 2em;
+	background: green;
+}
+
+footer {
+	margin: 15px;
+	padding: 5px
+}
+
+header {
+	margin: 15px;
+	padding: 5px
+}
+
+#Art1
+{
+	display: flex;
+	flex:2;
+}
+
+#Art2
+{
+	display: flex;
+	flex:1;
+}
+
+/* CANVAS - 14 aout 2018 */
+#monPremierCanvas {
+	_display: flex;
+	_flex:1;
+	border: chocolate solid 1em;
+	border-radius:1em;
+}

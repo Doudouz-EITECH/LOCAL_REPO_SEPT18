@@ -1,0 +1,122 @@
+
+@font-face {
+	font-family: 'policePersoArrondie';
+	src: url('policePerso/policePerso.ttf');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'policePersoStar';
+	src: url('../fonts_persos/StarStrella/Star Strella.ttf'); 
+	/*src: url('policePerso/Star_Strella.ttf'); */
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'policePersoHard';
+	src: url('../fonts_persos/Party Hard.ttf'); 
+	/*src: url('policePerso/Star_Strella.ttf'); */
+	/*font-weight: bold;*/
+}
+
+
+
+
+body {
+	font-family:verdana, futura ;
+	color:white;
+	font-size:1.1em;
+	font-style: oblique;
+	font-weight: normal;
+}
+
+h1 {
+	font-family: 'policePersoStar', verdana;
+	/*text-transform: uppercase;*/
+}
+
+h2
+{
+	color:rgb(150,100,250);
+	font-family: policePersoStar;
+	font-size: 2.5em;
+}
+
+p
+{
+	border:solid 0.1em grey;
+	border-radius: 1em;
+}
+
+a:hover
+{
+	color:rgb(0,100,0);
+}
+
+.sousTitre
+{
+	text-align:center;
+	border:solid 2px grey;
+	border-radius: 0.3em;
+	font-family: "policePersoArrondie";
+	font-size:1.3em;
+}
+
+
+#img {
+	float:right;
+	margin-top:-8.5%;  /* ok très moche mais bon ça fonctionne */
+	margin-right: 30%;
+	box-shadow: 1.5em 0.5em grey;
+}
+
+body
+{
+	background-image: url("wallpapergrey.png");
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+
+.noList {
+	list-style-type: none;
+	font-weight: normal;
+	/* display: flex; */
+	padding: auto;
+}
+
+nav ul {
+	list-style-type: none;
+	padding:10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin-left: 50;
+	/*padding-bottom: 3px;*/
+	/*text-decoration: none;*/
+	/*margin-right: 400px; */
+}
+
+nav a {
+	color:white;
+	font-family: policePersoHard;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	text-decoration: none; /*enlever le surlignage*/
+	align-content: space-between;
+}
+
+nav a:hover {
+	color:grey;
+	font-weight: bold;
+	font-style:italic;
+}
+
+nav ul li {
+
+}
+
+/* faire disparaitre le dernier li dans un ul (dans une liste) */
+ul li:last-child {
+	list-style-type:none;
+}

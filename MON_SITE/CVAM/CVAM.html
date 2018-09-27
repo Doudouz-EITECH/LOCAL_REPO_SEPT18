@@ -1,0 +1,86 @@
+<!Doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>=CV AM=</title>
+	<link rel="stylesheet" type="text/css" href="CVstyle.css">
+</head>
+
+
+<body onclick="miseEnFormeTitres('h2', true, 'Un message d\'amour');"
+	  ondblclick="ChangeTitres('textPresAldous');">
+	<div id="txtImg">
+		<h1 class="sousTitre ext red" style="font-size:3em;" id="idH1">Aldous Masson</h1>
+		<h4 class="sousTitre" id="textPresAldous">Aldous, informaticien en devenir !</h4>
+		<br/>
+		
+		<a id="img" href="profil.png"><img src="profil.png" alt="woopsie" title="Photo de CV" style="width:150px; height:150px"/></a>
+	</div>
+	<br/>
+
+	<h2 onmouseover="miseEnFormeTitres('h2',false);">Mon experience</h2> <!-- style="font-variant:small-caps;" --> 
+	<p>
+		<ul class="list">
+			<li>Travaux manuels multiples</li>
+			<li>Stages dans des boites <em>super cool</em></li>
+			<li>Vendeur de bonheur</li>
+		</ul>
+	</p>
+	<br/>
+
+	<h2 onmouseover="miseEnFormeTitres('h2',false);">Mes compétences</h2>
+	<p>
+		<ol>
+			<li>Compétences <em>informatiques</em> diverses</li>
+			<li>Compétences humaines diverses</li>
+			<li>Et plein d'autres choses</li>
+		</ol>
+	</p>
+	<br/>
+	<h2 onmouseover="miseEnFormeTitres('h2',false);">Ma formation</h2>
+	<p>
+		<ul class="noList">
+			<li>J'ai eu la chance d'étudier à <em>Dauphine</em></li>
+			<li>En prépa</li>
+			<li>A <a title="AFCEPF" target="_blank" href="http://www.afcepf.fr/">l'AFCEPF</a> pour l'informatique</li>
+			<li style="display: none">Ceci est invisible</li>
+		</ul>
+	</p>
+
+	<br/>
+	<nav id="navigateur">
+		<h2 onmouseover="miseEnFormeTitres('h2',false);">Liens</h2>
+		<ul>
+			<li><a href="#">[ Formation ]</a></li>
+			<li><a href="#">[ Développements]</a></li>
+			<li><a href="#">[ Vidéos ]</a></li>
+			<li><a href="#">[ Lien formation ]</a></li>
+		</ul>
+	</nav>
+
+	<script type="text/javascript" src="jsCV.js" ></script>
+	<!-- 
+
+		EXERCICE 2 :
+		Ajouter les effets de style suivants :
+
+	Changer la couleur d'un des textes
+	Changer l'alignement d'un des textes
+	Appliquer une image de fond à la page
+	Utiliser une police personnalisée via @font-face
+	Définir une bordure à un élément
+	Définir une ombre à un élément
+	Vous avez bien entendu le droit de modifier le fichier .html lui-même si cela vous semble nécessaire ! Vous devez utiliser un fichier .css externe et le joindre au ZIP que vous créerez, en plus des images et polices éventuelles.
+
+
+	EXERCICE 1 : 
+	Votre nom, en titre principal
+
+	Une courte phrase qui vous décrit, ou une citation, en-dessous du nom
+	Une photo miniature, sur laquelle on pourra cliquer pour avoir une version agrandie
+	3 sections délimitées par des titres différents :
+	Mon expérience
+	Mes compétences
+	Ma formation
+	Pensez à bien utiliser des balises de titre, de paragraphe et des listes à puces lorsque cela vous semble nécessaire. Et pensez à joindre les images utilisées dans le ZIP en plus du fichier .html !
+-->
+</body>

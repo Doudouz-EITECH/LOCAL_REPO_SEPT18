@@ -1,1 +1,10 @@
-GITHUB DESKTOP -> Création en local d'un repo grace l'interface utilisateur (UI)
+GITHUB DESKTOP
+-> Création en local d'un repo grace l'interface utilisateur (UI)
+-> ajout avec PUBLISH en haut à droite du repo : il est désormais sur le repo
+-> création d'une file en local
+    -> add la file sur le repo
+    -> commit pour la save dans le repo
+    -> push
+
+    Fin du commit.
+    
