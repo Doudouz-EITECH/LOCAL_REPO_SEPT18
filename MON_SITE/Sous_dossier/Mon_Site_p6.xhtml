@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<title>Page 6 - Xhtml</title>
+	<link  rel="stylesheet" type="text/css" href="../Styles.css"/>
+	<link  rel="stylesheet" type="text/css" href="../cssBoutons.css"/>
+</head>
+
+<body>
+
+ 	<!-- pourquoi ça marche pas sans le alert.. ? -->
+	<label onclick="alert(somme(2,4));">Lab</label> 
+	<br/>
+	<label onclick="var a = prompt('quel nombre ?'); enumNombres(a);">Enumeration des nombres</label>
+
+	<br/><br/>
+	<!--<input type="button" name="bjs" class="btn success" onmouseover="alert('clic ?');" /><label>Clic ?</label> -->
+	
+
+
+	<input type="button" name="bjs" class="btn success" value="Alea"
+			onclick="alert('gain de ' + aleaEntreBornes(0,10));" />
+
+
+
+
+	<input type="button" name="bjs" class="btn success" value="clac" onclick="Message2();" />
+
+
+	<!-- sommaire-->
+	<nav id="sommaire">
+		<ul id="somList">
+			<li><a href="../Mon_Site_p1.html" onclick="goPage(1);">Page 1</a></li>
+			<!-- <li><a href="../Mon_Site_p1.html" onclick="confirm('sur d\'aller p1 ?');">Page 1</a></li> -->
+			<li><a href="../Mon_Site_p2.html" onclick="goPage(2);">Page 2</a></li>
+			<li><a href="Mon_Site_p3.html" onclick="goPage(3);">Page 3</a></li>
+			<li><a href="Mon_Site_p4.html" onclick="goPage(4);">Page 4</a></li>
+			<li><a href="Mon_Site_p5.html" onclick="goPage(5);">Page 5</a></li>
+			<li><a href="page7.xhtml" onclick="goPage(7);">Page 7</a></li>
+		</ul>
+	</nav>
+
+	<!-- script sous dossier : javascriptssdossier.js
+	<script type="text/javascript" src="javascript.js"/> -->
+
+	<script type="text/javascript" src="../javascript.js"/>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Page 5</title>
+			<meta charset="utf-8"/>
+
+	</head>
+	<body>
+		<!--	<p><b>Chemin</b> d'accès : /Users/AlexisMasson/Desktop/OpenClassRoom - Html/MON SITE/Sous dossier</p> 
+		-->
+
+		<!-- test de commentaire -->
+		
+		<a href="../Mon_Site_p1.html">Lien test vers page 1</a>
+
+		<p>Et un lien vers la <a href="../Mon_Site_p2.html" target="_blank">page 2 (cliquable)</a>
+		</p>
+	
+	</body>
+</html>

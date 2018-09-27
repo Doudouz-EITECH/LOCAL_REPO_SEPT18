@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+	<META charset="UTF-8"> <!-- Toujours en premier (car needed pour title par ex) -->
+	<link rel="stylesheet" href="../Styles.css"> <!-- la css avec les canvas entre autre -->
+	<link rel="stylesheet" href="../cssBoutons.css">
+	
+	<title>Page 4 - mise en page</title>
+</head>
+
+<!-- attribut ONLOAD permettant de forcer à lancer la fonction a dispo -->
+<body onload="draw();"
+		ondblclick="exitDeuxiemeCanvas();"
+		onclick="drawDeuxiemeCanvas();">
+	<header class="bordures">head</header>
+	<div>
+		<nav>Navigateur
+			<div class="moit">
+				<article id='final'>
+					<input type="text" name="voici">
+					<button class="success">clic</button>
+				</article>
+				<article>Art22
+
+				</article>
+				<article>Art33</article>
+			</div>
+		</nav>
+		<article id="art1" style="color:yellow;">
+		<!-- liste de boutons -->
+				<h2>Liste de boutons :</h2>
+
+				<ol style="align-content: right; margin-right: 1000px">
+					<li><button class="btn success">Success</button></li>
+					<li><button class="btn info">Info</button></li>
+					<li><button class="btn warning">Warning</button></li>
+					<li><button class="btn danger">Danger</button></li>
+					<li><button class="btn default">Default</button></li>
+				</ol>
+		</article>
+		<article id="art2">Art 2</article><br/>
+	</div>
+	<footer class="bordures">footer</footer>
+
+
+
+	<!-- sommaire-->
+	<div id="sommaire">
+		<ol>
+			<li><a href="../Mon_Site_p1.html">Page 1</a></li>
+			<li><a href="../Mon_Site_p2.html">Page 2</a></li>
+			<li><a href="Mon_Site_p3.html">Page 3</a></li>
+			<li><a href="Mon_Site_p5.html">Page 5</a></li>
+			<li><a href="Mon_Site_p6.xhtml">Page 6</a></li>
+		</ol>
+	</div>
+
+	<!-- CANVAS - 14 aout 2018 -->
+	<div id="divCanvas">
+		<canvas height="150px" width="150px" id="monPremierCanvas">
+			<span style="font:bold italic">(Phrase qui doit s'afficher si le canvas n'est pas dispo)</span>
+		</canvas>
+	</div>
+
+	<div style="border:none">
+		<br /><br /><br /><br />
+		<p>
+			Un peu d'espace s'il vous plait
+		</p>
+		<br /><br /><br /><br />
+	</div>
+
+	<!-- autre CANVAS -->
+	<div>
+		<canvas id="deuxiemeCanvas" width="150" height="150">
+			Au cas ou le canvas ne marche pas, ligne qui s'affichera.
+			Voir fonction drawDeuxiemeCanvas dans le javascript.js
+		</canvas>
+	</div>
+
+	<script src="../javascript.js"></script>
+	<!-- <script src="../jsNum5.js"></script> -->
+</body>
+
+</html>
