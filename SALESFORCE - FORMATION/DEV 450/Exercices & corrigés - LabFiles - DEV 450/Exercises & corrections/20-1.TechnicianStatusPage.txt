@@ -1,0 +1,60 @@
+<apex:page standardController="Contact" extensions="TechnicianStatus_CX">
+    <apex:form >
+        <apex:stylesheet value="{!URLFOR($Resource.myStylesheet)}" /> 
+                
+        <apex:pageBlock Title="Technician Status">
+            <!-- Technician Info  -->
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit Technician 1" action="{!edit}"/>
+                <apex:commandButton value="Edit Technician 2" action="{!editContact2}"/>
+                <apex:commandButton value="Edit Technician 3" action="{!editContact3}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:outputField value="{!Contact.Name}" label="Technician Name"/> 
+                <apex:outputField value="{!Contact.Email}" label="Email"/> 
+                <apex:outputField value="{!Contact.Phone}" label="Phone"/> 
+                <apex:outputField value="{!Contact.Account.Name}" label="Account"/> 
+            </apex:pageBlockSection>
+            
+            <p/>
+            
+            <!-- Course Listing  -->
+            <apex:pageBlockTable id="courseList" value="{!Contact.Course_Attendees__r}" var="ca" captionStyle="text-align:left;font-weight:bold">
+               <apex:facet name="caption">Course Listing</apex:facet>
+                <apex:column >
+                    <apex:outputLink value="{!URLFOR($Action.Course_Attendee__c.View, ca.id)}">
+                        <apex:outputText value="{0,date,MMMM' 'dd', 'yyyy}">
+                            <apex:Param value="{!ca.Course_Delivery__r.Start_Date__c}" />
+                        </apex:outputText>
+                        <apex:actionSupport event="onmouseover" rerender="attendeeList">
+                        	<apex:param name="courseDeliveryId" value="{!ca.Course_Delivery__r.Id}" />
+                        </apex:actionSupport>
+                        <apex:actionSupport event="onmouseout" rerender="attendeeList" />
+                     </apex:outputLink>
+                </apex:column>
+                <apex:column value="{!ca.Course_Delivery__r.Instructor__r.Name}" />
+                <apex:column value="{!ca.Course_Delivery__r.Course__r.Certification__r.Name}"/>
+                <apex:column value="{!ca.Course_Delivery__r.Course__r.Certification__r.Certification_Description__c}" />
+             </apex:pageBlockTable>
+              
+            <p/>
+            <!-- Used to optionally display a list of Course Attendees if the user hovers over the Course Delivery Date -->
+            <apex:outputPanel id="attendeeList">
+                <apex:outputPanel rendered="{!if(isBlank(attendeeList), false, true)}" styleClass="attendeeList" layout="block" > 
+                	{!attendeeList}
+                </apex:outputPanel>  
+                <p/>
+            </apex:outputPanel>
+            
+                         
+             <!-- Certification Listing  -->
+            <apex:dataTable cellpadding="2" styleClass="myDetailList" id="certList" value="{!Contact.Certifications_Held__r}" var="ch" captionStyle="text-align:left;font-weight:bold">
+               <apex:facet name="caption">Certifications Held</apex:facet>
+                <apex:column styleClass="myDataCol" headerValue="Date Achieved" value="{!ch.Date_Achieved__c}" />
+                <apex:column styleClass="myDataCol" headerValue="Certification Name" value="{!ch.Certification__r.Name}" />
+                <apex:column styleClass="myDataCol" headerValue="Certification Description" value="{!ch.Certification__r.Certification_Description__c}" />
+            </apex:dataTable> 
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

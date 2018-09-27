@@ -1,0 +1,52 @@
+<apex:page standardController="Contact">
+    <apex:form >
+        <apex:stylesheet value="{!URLFOR($Resource.myStylesheet)}" />
+        <!-- TODO #1: Create an apex:includeScript component with an attribute named
+                      value that is dynamically bound to the customCancelButton Static Resource  -->
+        
+        
+        <apex:pageBlock Title="Technician Status">
+            <!-- Technician Info  -->
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit Technician Record" action="{!edit}"/>
+                <!-- TODO #2: Create an apex:commandButton component with an attribute named value
+							  that has the value "Cancel" and an attribute named onclick that has
+							  the value "return confirmCancel()" and an attribute named action
+							  that is dynamically bound to the cancel method -->
+                
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:outputField value="{!Contact.Name}" label="Technician Name"/> 
+                <apex:outputField value="{!Contact.Email}" label="Email"/> 
+                <apex:outputField value="{!Contact.Phone}" label="Phone"/> 
+                <apex:outputField value="{!Contact.Account.Name}" label="Account"/> 
+            </apex:pageBlockSection>
+            
+            <p/>
+            
+            <!-- Course Listing  -->
+            <apex:pageBlockTable id="courseList" value="{!Contact.Course_Attendees__r}" var="ca" captionStyle="text-align:left;font-weight:bold">
+               <apex:facet name="caption">Course Listing</apex:facet>
+                <apex:column headerValue="Date">
+                    <apex:outputLink value="{!URLFOR($Action.Course_Attendee__c.View, ca.id)}">
+                        {!ca.Course_Delivery__r.Start_Date__c}
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Instructor Name" value="{!ca.Course_Delivery__r.Instructor__r.Name}" />
+                <apex:column headerValue="Certification Name" value="{!ca.Course_Delivery__r.Course__r.Certification__r.Name}"/>
+                <apex:column headerValue="Certification Description" value="{!ca.Course_Delivery__r.Course__r.Certification__r.Certification_Description__c}" />
+             </apex:pageBlockTable>
+                  
+            <p/>
+            
+            <!-- Certification Listing  -->
+            <apex:dataTable cellpadding="2" styleClass="myDetailList" id="certList" value="{!Contact.Certifications_Held__r}" var="ch" captionStyle="text-align:left;font-weight:bold">
+               <apex:facet name="caption">Certifications Held</apex:facet>
+                <apex:column styleClass="myDataCol" headerValue="Date Achieved" value="{!ch.Date_Achieved__c}" />
+                <apex:column styleClass="myDataCol" headerValue="Certification Name" value="{!ch.Certification__r.Name}" />
+                <apex:column styleClass="myDataCol" headerValue="Certification Description" value="{!ch.Certification__r.Certification_Description__c}" />
+            </apex:dataTable> 
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

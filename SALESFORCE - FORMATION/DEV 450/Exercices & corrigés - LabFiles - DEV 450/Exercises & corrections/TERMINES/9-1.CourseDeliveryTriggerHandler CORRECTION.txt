@@ -1,0 +1,28 @@
+public class CourseDeliveryTriggerHandler {
+
+    //TODO: Review the following static method.
+    //It encapsulates the logic that was formerly found the trigger.
+    //It is static, so it can be invoked without instantiating the class.
+    public static void preventInvalidCourseDeliveries() {
+        // Fetch the current holidays.
+        // For simplicity's sake, we've assumed no recurring holidays
+        Set<Date> allHolidays = new Set<Date>();
+        for (List<Holiday> holidays : [SELECT ActivityDate FROM Holiday]) {
+            for (Holiday h : holidays) {
+                allHolidays.add(h.ActivityDate);
+            }
+        }
+    
+        //TODO: Review the following for-loop.
+        //Notice we can reference trigger.new in the class, 
+        //but we must cast it to the correct type.
+        for (Course_Delivery__c courseDelivery : (List<Course_Delivery__c>)Trigger.new) {
+            if (courseDelivery.Start_Date__c != NULL) {
+                //Prevent the invoking DML action if the Start Date is in the allHolidays set.
+                if ( allHolidays.contains(courseDelivery.Start_Date__c) ) {
+                    courseDelivery.addError('Course Delivery cannot be scheduled because it starts on a holiday.');          
+                }
+            }
+        }
+    }
+}

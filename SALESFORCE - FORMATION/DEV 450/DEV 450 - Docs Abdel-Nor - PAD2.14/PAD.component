@@ -1,0 +1,20 @@
+<apex:component controller="PAD">
+	<div id='PAD_loading' style="display:none; position:absolute; left:1px; top:1px;  width:100%;  height:100%; background-color:#888888; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5;"></div>
+	<script type="text/javascript">
+	function PAD_lock(){document.getElementById('PAD_loading').style.display='block';}
+	function PAD_unlock(){document.getElementById('PAD_loading').style.display='none';}
+	</script>
+	<style>.main{text-align:center;}</style>
+	<br />
+	<apex:pageBlock title="PAD" rendered="{!PAD_DebugMode}" id="PAD">
+	<apex:pageBlockTable value="{!PAD_Logs}" var="PAD_Log">
+		<apex:column headerValue="Time" value="{!PAD_Log.timer}" width="150px" headerClass="main" style="{!PAD_Log.rowCSS}" styleClass="main" />
+		<apex:column headerValue="Reason" width="200px" headerClass="main" style="{!PAD_Log.rowCSS}" styleClass="main">
+			<apex:outputText value="{!PAD_Log.reason}" escape="false" />
+		</apex:column>
+		<apex:column headerValue="Message" headerClass="main" style="{!PAD_Log.rowCSS}" styleClass="main">
+			<apex:outputText value="{!PAD_Log.message}" escape="false" />
+		</apex:column>
+	</apex:pageBlockTable><br />
+	</apex:pageBlock>
+</apex:component>

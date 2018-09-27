@@ -1,0 +1,38 @@
+//TASK 1: Retrieve a single case.
+
+//TODO: Write an Apex statement that:
+//       - Declares a variable of type Case named aCase and assign it the value of a SOQL query that
+//         - Selects the Subject field
+//         - From the Case sObject
+//         - Where the value of the Id field of the Case sObject equals the Id you retrieved from the salesforce UI
+Case aCase = [SELECT Subject FROM Case WHERE Id='5001400000pWq3BAAS'];
+System.debug(aCase);
+
+//--------------------------------------------------------------------------------------------
+//TASK 2: Retrieve multiple cases.
+
+//TODO: Write an Apex statement that:
+//       - Declares a variable whose type is a List of Case sObjects named cases and assign it the value of a SOQL query that
+//         - Selects the Id field
+//         - From the Case sObject
+List<Case> cases = [SELECT Id From Case];
+
+System.debug('Total number of cases: ' + cases.size());
+for (Case c : cases) {
+    System.debug(c);
+}
+
+// TASK 3 (OPTIONAL): Find records created using a particular record type.
+//--------------------------------------------------------------------------------------------
+
+//TODO: Review the following code that returns the Id of a Record Type
+Id productSupportId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Product Support').getRecordTypeId();
+
+//TODO: Add a WHERE clause to the SELECT statement below to determine if the RecordTypeId field of the Case sObject
+//      is equal to the id value stored in the productSupportId variable.
+
+List<Case> cases = [SELECT Id, Status, Subject FROM Case WHERE RecordTypeId = :productSupportId];
+System.debug('Total number of cases: ' + cases.size());
+for (Case c : cases) {
+    System.debug(c);
+}
